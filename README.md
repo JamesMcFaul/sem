@@ -1,2 +1,4 @@
 #SEM Coursework  
-**_initial read me file_**
+1. **_initial read me file_**
+
+2. _update to read me file to ensure workflow is operating correctly_
