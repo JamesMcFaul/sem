@@ -18,6 +18,14 @@ jobs:
             docker network create --driver bridge se-methods
             docker pull mongo
             docker run -d --name mongo-dbserver --network se-methods mongo
+      - name: Build with Maven
+        run: mvn package
+      - name: Build
+        run: docker build -t se_methods .
+      - name: Run image
+        run: docker run --network se-methods --name semcontainer se_methods
+      - name: view logs
+        run: docker logs semcontainer
       - name: Compile with Maven
         run: mvn compile
       - name: Build Docker Image
